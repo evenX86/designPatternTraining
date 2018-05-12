@@ -2,6 +2,9 @@ package io.github.evenX86.leetCode;
 
 import io.github.evenX86.leetCode.addTwoNumbers.ListNode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 
 public class Solution {
     /**
@@ -53,5 +56,34 @@ public class Solution {
             parent.next = new ListNode(jw);
         }
         return head;
+    }
+
+    /**
+     *
+     * @param s
+     * @return
+     */
+    public static int lengthOfLongestSubstring(String s) {
+        int max = 0;
+        if (s==null || s.length() <= 0) return 0;
+        Set<Character> charSet = new HashSet<Character>();
+        int LEN = s.length();
+        int start = 0;
+        int end = 0;
+        while (start < LEN && end < LEN) {
+            if (!charSet.contains(s.charAt(end))) {
+                charSet.add(s.charAt(end));
+                end ++;
+                max = Math.max(max, end - start);
+            } else {
+                charSet.remove(s.charAt(start));
+                start ++;
+            }
+        }
+        return max;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(lengthOfLongestSubstring("bvbk"));
     }
 }
