@@ -1,5 +1,6 @@
 package io.github.evenX86.leetCode;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import io.github.evenX86.leetCode.addTwoNumbers.ListNode;
 
 import java.util.HashSet;
@@ -83,7 +84,50 @@ public class Solution {
         return max;
     }
 
+    /**
+     * 计算最长回文子串
+     * @param s
+     * @return
+     */
+    public static String longestPalindrome(String s) {
+        String target = "";
+        int max = 0;
+        if (s == null || "".equals(s)) {
+            return target;
+        }
+        if (s.length() == 1) {
+            return s;
+        }
+
+        for (int i=1;i<=s.length();i ++) {
+            for (int j =0 ;j<i;j++) {
+                if (i-j<max) break;
+                String str = s.substring(j,i);
+                int tmp = checkPalidrome(str);
+                if (tmp > max) {
+                    max = tmp;
+                    target = str;
+                }
+            }
+        }
+        return target;
+    }
+
+    private static int checkPalidrome(String substring) {
+        int len = substring.length()/2;
+        boolean flag = true;
+        for (int i=0;i<len ;i++) {
+            if (substring.charAt(i)
+                    != substring.charAt(substring.length() - i -1)) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag) return substring.length();
+        return 0;
+    }
+
     public static void main(String[] args) {
-        System.out.println(lengthOfLongestSubstring("bvbk"));
+        System.out.println(longestPalindrome("bb"));
     }
 }
