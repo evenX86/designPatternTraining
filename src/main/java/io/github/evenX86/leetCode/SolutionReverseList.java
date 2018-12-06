@@ -2,6 +2,12 @@ package io.github.evenX86.leetCode;
 
 import io.github.evenX86.leetCode.addTwoNumbers.ListNode;
 
+/**
+ *
+ * https://leetcode.com/problems/reverse-linked-list/
+ * 链表面试考的是代码能力
+ * 链表的题目一般都比较直接，考验面试者代码是否简洁，逻辑是否清晰，可以通过多练习提升
+ */
 public class SolutionReverseList {
     public static ListNode reverseList(ListNode head) {
         ListNode res = null;
