@@ -37,6 +37,20 @@ public class SolutionIsValidBST {
         getInOrderList(node.right, list);
     }
 
+    public boolean isValid(TreeNode node, Integer min, Integer max) {
+        if (node == null) {
+            return true;
+        }
+        if (min != null && node.val <= min) {
+            return false;
+        }
+        if (max != null && node.val >= max) {
+            return false;
+        }
+        return isValid(node.left, min,node.val) && isValid(node.right, node.val, max);
+
+    }
+
     public static void main(String[] args) {
         TreeNode treeNode = new TreeNode(5);
         TreeNode t2 = new TreeNode(4);
