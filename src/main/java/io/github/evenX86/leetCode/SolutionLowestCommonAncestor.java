@@ -41,6 +41,17 @@ public class SolutionLowestCommonAncestor {
         }
 
     }
+    public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
+        if (p.val > root.val && q.val > root.val) {
+            // p与q都比root大，则lca在右子树中
+            return lowestCommonAncestor1(root.right,p,q);
+        }
+        if (p.val< root.val && q.val > root.val) {
+            return lowestCommonAncestor1(root.left,p,q);
+        }
+        return root;
+
+    }
 }
 
 
