@@ -1,7 +1,6 @@
-package io.github.evenX86.leetCode;
+package io.github.evenX86.solution;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import io.github.evenX86.leetCode.addTwoNumbers.ListNode;
+import io.github.evenX86.solution.addTwoNumbers.ListNode;
 
 import java.util.HashSet;
 import java.util.Set;

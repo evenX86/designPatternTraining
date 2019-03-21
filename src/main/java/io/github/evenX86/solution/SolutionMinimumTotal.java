@@ -1,4 +1,4 @@
-package io.github.evenX86.leetCode;
+package io.github.evenX86.solution;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +48,5 @@ public class SolutionMinimumTotal {
         triangle.add(tmpList);
 
 
-        System.out.println(minimumTotal(triangle));
     }
 }

@@ -1,6 +1,6 @@
-package io.github.evenX86.leetCode;
+package io.github.evenX86.solution;
 
-import io.github.evenX86.leetCode.addTwoNumbers.ListNode;
+import io.github.evenX86.solution.addTwoNumbers.ListNode;
 
 /**
  *

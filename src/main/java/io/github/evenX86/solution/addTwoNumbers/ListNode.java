@@ -1,4 +1,4 @@
-package io.github.evenX86.leetCode.addTwoNumbers;
+package io.github.evenX86.solution.addTwoNumbers;
 
 public class ListNode {
     public int val;

@@ -1,6 +1,5 @@
-package io.github.evenX86.leetCode;
+package io.github.evenX86.solution;
 
-import java.util.Arrays;
 import java.util.PriorityQueue;
 
 public class KthLargest {

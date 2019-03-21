@@ -1,4 +1,4 @@
-package io.github.evenX86.leetCode;
+package io.github.evenX86.solution;
 
 /**
  * Created with design-pattern-training
