@@ -1,7 +1,6 @@
 package io.github.evenX86.mq;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Map;
 
 /**
