@@ -6,6 +6,7 @@ import java.util.Map;
 /**
  * Created with design-pattern-training
  *
+ * Unsafe thread
  * https://www.jianshu.com/p/c4e4d55706ff
  * @author xuyifei
  * @date 2019-09-28 12:33 PM
