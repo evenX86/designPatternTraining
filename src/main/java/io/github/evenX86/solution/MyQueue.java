@@ -2,25 +2,35 @@ package io.github.evenX86.solution;
 
 import java.util.Stack;
 
-class MyQueue {
+/**
+ * 双栈实现队列
+ *  * Your MyQueue object will be instantiated and called as such:
+ *  * MyQueue obj = new MyQueue();
+ *  * obj.push(x);
+ *  * int param_2 = obj.pop();
+ *  * int param_3 = obj.peek();
+ *  * boolean param_4 = obj.empty();
+ * @author xuyifei
+ */
+public class  MyQueue<T> {
 
-    private Stack<Integer> inputStack;
-    private Stack<Integer> outputStack;
+    private Stack<T> inputStack;
+    private Stack<T> outputStack;
     /** Initialize your data structure here. */
-    public MyQueue() {
-        inputStack = new Stack<Integer>();
-        outputStack = new Stack<Integer>();
+    public  MyQueue() {
+        inputStack = new Stack<T>();
+        outputStack = new Stack<T>();
 
     }
 
     /** Push element x to the back of queue. */
-    public void push(int x) {
+    public void push(T x) {
         inputStack.push(x);
 
     }
 
     /** Removes the element from in front of queue and returns that element. */
-    public int pop() {
+    public T pop() {
         if (!outputStack.empty()) {
             return outputStack.pop();
         }
@@ -31,7 +41,7 @@ class MyQueue {
     }
 
     /** Get the front element. */
-    public int peek() {
+    public T peek() {
         if (!outputStack.empty()) {
             return outputStack.peek();
         }
@@ -48,23 +58,14 @@ class MyQueue {
     }
 
     public static void main(String[] args) {
-        MyQueue queue = new MyQueue();
+        MyQueue queue = new MyQueue<String>();
 
-        queue.push(1);
-        queue.push(2);
+        queue.push("2");
+        queue.push("3");
         System.out.println(queue.peek());
-        queue.push(3);
+        queue.push("1");
         System.out.println(queue.peek());
         System.out.println(queue.pop());
         System.out.println(queue.empty());
     }
 }
-
-/**
- * Your MyQueue object will be instantiated and called as such:
- * MyQueue obj = new MyQueue();
- * obj.push(x);
- * int param_2 = obj.pop();
- * int param_3 = obj.peek();
- * boolean param_4 = obj.empty();
- */
