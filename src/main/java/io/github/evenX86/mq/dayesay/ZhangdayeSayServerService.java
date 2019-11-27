@@ -1,44 +1,39 @@
 package io.github.evenX86.mq.dayesay;
 
-import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.ChannelOption;
-import io.netty.channel.EventLoopGroup;
-import io.netty.channel.FixedRecvByteBufAllocator;
-import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.socket.SocketChannel;
-import io.netty.channel.socket.nio.NioServerSocketChannel;
+import com.sun.corba.se.pept.transport.Acceptor;
+import com.sun.corba.se.spi.transport.CorbaAcceptor;
+
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
+import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
+import java.util.Set;
 
 /**
  * Created with design-pattern-training
  *
+ * server zhangdaye
  * @author xuyifei
  * @date 2019-11-03 3:20 PM
  */
 public class ZhangdayeSayServerService implements SayService {
     @Override
     public void say() {
-        EventLoopGroup bossGroup = new NioEventLoopGroup(1);
-        EventLoopGroup workerGroup = new NioEventLoopGroup(1);
-        ServerBootstrap serverBootstrap = new ServerBootstrap();
-        serverBootstrap.group(bossGroup, workerGroup)
-                .channel(NioServerSocketChannel.class)
-                .option(ChannelOption.SO_BACKLOG, 1024)
-                .childOption(ChannelOption.SO_KEEPALIVE, true)
-                .option(ChannelOption.RCVBUF_ALLOCATOR, new FixedRecvByteBufAllocator(65535))
-                .childHandler(new ChannelInitializer<SocketChannel>() {
-                    @Override
-                    protected void initChannel(SocketChannel ch) throws Exception {
-                        ch.pipeline().addLast(ZhangdayeSayHandler.INSTANCE);
 
-                    }
-                });
-        serverBootstrap.bind(8080).addListener(future -> {
-            if (future.isSuccess()) {
-                System.out.println("server start up success");
-            } else {
-                System.out.println("server start up failed" + future.cause());
-            }
-        });
+
+    }
+
+    public static void main(String[] args) {
+        String s = new String("1");
+        String s2 = "1";
+        s.intern();
+        System.out.println(s == s2);
+
+        String s3 = new String("1") + new String("1");
+        String s4 = "11";
+        s3.intern();
+        System.out.println(s3 == s4);
     }
 }
