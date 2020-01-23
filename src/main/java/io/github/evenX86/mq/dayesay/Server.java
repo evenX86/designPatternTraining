@@ -18,6 +18,5 @@ public class Server {
         LidayeSayClient lidayeSayClient = new LidayeSayClient();
         zhangdayeSayServerService.say();
         lidayeSayClient.say();
-
     }
 }

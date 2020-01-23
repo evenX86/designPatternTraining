@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user" class="io.evenX86.github.ioc.domain.User">
+        <property name="id" value="123"/>
+        <property name="name" value="123"/>
+    </bean>
+    <bean id="objectFactory"  class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
+        <property name="targetBeanName" value="user"/>
+    </bean>
+    <bean id="superUser" class="io.evenX86.github.ioc.domain.SuperUser" parent="user" primary="true">
+        <property name="addr" value="zzz"/>
+    </bean>
+</beans>
