@@ -18,6 +18,7 @@
         <module>spring-training</module>
         <module>leetcode-training</module>
         <module>bytecode</module>
+        <module>spring-bean</module>
     </modules>
 
     <dependencyManagement>

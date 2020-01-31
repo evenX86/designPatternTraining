@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- 静态方法实例化Bean -->
+    <bean id="user-by-static-method" class="io.evenX86.github.ioc.domain.User" factory-method="createUser"/>
+
+    <!-- 实例（Bean） 化方法实例bean -->
+    <bean id="user-by-instance-method" factory-bean="userFactory" factory-method="createUser"/>
+
+    <!-- FactoryBean 实例化 -->
+    <bean id="user-by-factory-bean" class="io.evenX86.github.spring.bean.definition.factory.UserFactoryBean" />
+
+    <bean id="userFactory" class="io.evenX86.github.spring.bean.definition.factory.DefaultUserFactoryImpl" />
+</beans>
