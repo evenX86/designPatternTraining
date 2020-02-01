@@ -15,4 +15,6 @@ public interface UserFactory {
     }
 
     void initMaunal();
+
+    void doDestroy();
 }
