@@ -10,6 +10,10 @@ public class User {
     private Long id;
     private String name;
 
+    public static User createUser() {
+        return new User();
+    }
+
     public Long getId() {
         return id;
     }

@@ -13,4 +13,6 @@ public interface UserFactory {
     public default User createUser() {
         return User.createUser();
     }
+
+    void initMaunal();
 }
