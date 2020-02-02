@@ -19,6 +19,7 @@
         <module>leetcode-training</module>
         <module>bytecode</module>
         <module>spring-bean</module>
+        <module>dependency-lookup</module>
     </modules>
 
     <dependencyManagement>

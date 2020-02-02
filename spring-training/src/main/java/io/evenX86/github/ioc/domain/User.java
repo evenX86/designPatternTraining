@@ -10,6 +10,16 @@ public class User {
     private Long id;
     private String name;
 
+    public User(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public User() {
+        id=1L;
+        name="evenx86";
+    }
+
     public static User createUser() {
         return new User();
     }
